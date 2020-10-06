@@ -115,5 +115,23 @@
         }
       
     }
+    .consultation {
+        padding: 50px 0 40px 0;
+        &__title {
+            font-size: 26px;
+            text-align: center;
+            line-height: 40px;
+        }
+        &__descr {
+            margin-top: 32px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .feed-form {
+            width: 280px;
+            margin: 0 auto;
+            margin-top: 35px;
+        }
+    }
     
 }
