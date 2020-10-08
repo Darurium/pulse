@@ -1,3 +1,29 @@
+@media (min-width: 992px) {
+    .carousel {
+        .tns-nav {
+            display: none;
+        }   
+        &__inner {
+            .tns-item {
+                img {
+                    width: 70%;
+                }    
+            }
+        }
+        .prev {
+            left: -10px
+        }
+        .next {
+            right: -10px;
+            left: auto;
+        } 
+        .tns-nav {
+            display: none;
+        } 
+        
+    }
+}
+
 @media (max-width: 991px) {
     .container {
         max-width: 90vw;
@@ -26,6 +52,27 @@
         &_main {
             margin-top: 40px;
         }
+    }
+    .carousel {
+        &__inner {
+            .tns-item {
+                img {
+                    width: 70%;
+                }    
+            }
+        }
+        .prev {
+            left: -10px
+        }
+        .next {
+            right: -10px;
+            left: auto;
+        }  
+        .tns-nav {
+            display: none;
+        }  
+                
+        
     }
         
 }
@@ -83,6 +130,40 @@
             margin-top: 20px;
         }
         
+    }
+    .carousel {
+        &__inner {
+            .tns-item {
+                img {
+                    width: 95%;
+                }    
+            }
+            
+        }
+        .tns-nav {
+            position: absolute;
+            width: 42px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-between;            
+            [aria-controls] {
+                width: 8px;
+                height: 8px;
+                border-radius: 100%;
+                padding: 4px 4px;
+                border: none;
+                background-color: $main-color;
+                
+            }
+            .tns-nav-active {
+                background-color: #000;
+            }
+        }
+    .btn-hidden {
+        display: none;    
+    }
     }
 }
 
