@@ -38,9 +38,12 @@
     
 
     &__content {
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         justify-content: space-between;
+        &_active {
+            display: flex;
+        }
     }
     
 }
