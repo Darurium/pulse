@@ -165,6 +165,11 @@
         display: none;    
     }
     }
+    .catalog {
+        &__tab {
+            font-size: 16px;
+        }
+    }
 }
 
 
@@ -213,6 +218,76 @@
             margin: 0 auto;
             margin-top: 35px;
         }
+        
+    }
+    .catalog {
+        padding-bottom: 50px;
+        &__tabs {
+            flex-direction: column;
+            align-items: center;
+        }
+        &__tab {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    }
+    .feedback {
+        &__item {
+            flex-wrap: wrap;
+        }
+        &__img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 24px;
+        }
+        &__text {
+            margin-left: 0px;
+        }
+        &__name {
+            text-align: center;
+        }
+        &__count {
+            text-align: center;
+        }
+    }
+    .footer {
+        
+        &__info {
+            padding: 20px 10px;
+            width: 75%;
+        }
+        &__address {
+            font-size: 14px;
+        }
+        &__phone {
+            font-size: 16px;
+            margin-top: 12px;
+        }
+        &__social {
+            margin: 0 auto;
+            margin-top: 38px;
+            width: 210px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .modal {
+        width: 300px;
+        min-height: 345px;
+        padding: 28px 5px 25px 5px;
+        .feed-form {
+            width: 280px;
+            margin: 0 auto;
+            margin-top: 35px;
+        }
+        
+        &__close {
+            top: -5px;
+            right: 5px;
+        }
+
+        
         
     }
     
