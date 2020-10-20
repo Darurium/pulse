@@ -42,6 +42,8 @@ $(document).ready(function(){
 
 	toggleSlide('.catalog-card__more');
   toggleSlide('.catalog-card__back');
+
+// Модальные окна
   
   $('[data-modal=consultation]').on('click', function(){
     $('.overlay, #consultation').fadeIn('slow');
@@ -55,5 +57,38 @@ $(document).ready(function(){
       $('.overlay, #order').fadeIn('slow');
     })
   })
+
+// Валидация форм
+
+  function validatForm(form) {
+    $(form).validate({
+      rules: {
+        name: 'required',
+        phone: 'required',
+        email: {
+          required: true,
+          email: true
+        }
+      },
+      messages: {
+        name: "Введите имя",
+        phone: "Введите свой телефон",
+        email: {
+          required: "Введите свой адрес",
+          email: "Неправильно введен email"
+        }
+    }
+    });
+  }
+
+  validatForm('#consultation form')
+  validatForm('#order form')
+  validatForm('#consultation-form')
+
+// Маска инпутов
+
+$("input[name=phone]").mask("+7 (999) 999-99-99");
+
+
 });
 
