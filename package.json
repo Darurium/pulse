@@ -1,7 +1,6 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +21,15 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darurium/pulse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Darurium/pulse/issues"
+  },
+  "homepage": "https://github.com/Darurium/pulse#readme",
+  "dependencies": {},
+  "description": ""
 }
