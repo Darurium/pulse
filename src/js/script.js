@@ -42,8 +42,11 @@ $(document).ready(function(){
 
 	toggleSlide('.catalog-card__more');
   toggleSlide('.catalog-card__back');
+<<<<<<< HEAD
 
 // Модальные окна
+=======
+>>>>>>> 129c6669843734685f69e32c86cc7a33457ef0e5
   
   $('[data-modal=consultation]').on('click', function(){
     $('.overlay, #consultation').fadeIn('slow');
@@ -55,6 +58,7 @@ $(document).ready(function(){
     $(this).on('click', function(){
       $('#order .modal__descr').text($('.catalog-card__subtitle').eq(i).text());
       $('.overlay, #order').fadeIn('slow');
+<<<<<<< HEAD
     })
   })
 
@@ -107,5 +111,9 @@ $('form').submit(function(e){
 })
 
 
+=======
+    });
+  });
+>>>>>>> 129c6669843734685f69e32c86cc7a33457ef0e5
 });
 
