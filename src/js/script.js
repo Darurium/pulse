@@ -1,33 +1,33 @@
 $(document).ready(function(){
 
-  const slider = tns({
-    container: '.carousel__inner',
-    items: 1,
-    slideBy: 'page',
-    autoplay: false,
-    navContainer: false,
-    controls: false,
-    nav: false,    
-    responsive: {      
-      320: {
-        nav: true,
-      }
-    }
-  });
+	const slider = tns({
+		container: '.carousel__inner',
+		items: 1,
+		slideBy: 'page',
+		autoplay: false,
+		navContainer: false,
+		controls: false,
+		nav: false,    
+		responsive: {      
+		320: {
+			nav: true,
+		}
+		}
+	});
 
-  document.querySelector('.next').addEventListener('click', function() {
-      slider.goTo('next')
-    });
+	document.querySelector('.next').addEventListener('click', function() {
+		slider.goTo('next')
+		});
 
-  document.querySelector('.prev').addEventListener('click', function() {
-      slider.goTo('prev') 
-    });
+	document.querySelector('.prev').addEventListener('click', function() {
+		slider.goTo('prev') 
+		});
 
-  $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
-    $(this)
-      .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
-      .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
-  });
+	$('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
+		$(this)
+		.addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
+		.closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
+	});
 
     
 	function toggleSlide(item) {
@@ -41,79 +41,67 @@ $(document).ready(function(){
 	}
 
 	toggleSlide('.catalog-card__more');
-  toggleSlide('.catalog-card__back');
-<<<<<<< HEAD
+  	toggleSlide('.catalog-card__back');
 
 // Модальные окна
-=======
->>>>>>> 129c6669843734685f69e32c86cc7a33457ef0e5
   
-  $('[data-modal=consultation]').on('click', function(){
-    $('.overlay, #consultation').fadeIn('slow');
-  })
-  $('.modal__close').on('click', function() {
-    $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
-  });
+	$('[data-modal=consultation]').on('click', function(){
+		$('.overlay, #consultation').fadeIn('slow');
+	})
+	$('.modal__close').on('click', function() {
+		$('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+	});
   $('.button_mini').each(function(i){
-    $(this).on('click', function(){
-      $('#order .modal__descr').text($('.catalog-card__subtitle').eq(i).text());
-      $('.overlay, #order').fadeIn('slow');
-<<<<<<< HEAD
+		$(this).on('click', function(){
+			$('#order .modal__descr').text($('.catalog-card__subtitle').eq(i).text());
+			$('.overlay, #order').fadeIn('slow');
+		})
     })
-  })
 
 // Валидация форм
 
-  function validatForm(form) {
-    $(form).validate({
-      rules: {
-        name: 'required',
-        phone: 'required',
-        email: {
-          required: true,
-          email: true
-        }
-      },
-      messages: {
-        name: "Введите имя",
-        phone: "Введите свой телефон",
-        email: {
-          required: "Введите свой адрес",
-          email: "Неправильно введен email"
-        }
-    }
-    });
-  }
+	function validatForm(form) {
+		$(form).validate({
+			rules: {
+				name: 'required',
+				phone: 'required',
+				email: {
+				required: true,
+				email: true
+				}
+			},
+			messages: {
+				name: "Введите имя",
+				phone: "Введите свой телефон",
+				email: {
+					required: "Введите свой адрес",
+					email: "Неправильно введен email"
+				}
+			}
+		});
+	}
 
-  validatForm('#consultation form')
-  validatForm('#order form')
-  validatForm('#consultation-form')
+	validatForm('#consultation form')
+	validatForm('#order form')
+	validatForm('#consultation-form')
 
 // Маска инпутов
 
 $("input[name=phone]").mask("+7 (999) 999-99-99");
 
-$('form').submit(function(e){
-  e.preventDefault;
-  $.ajax({
-    type: "POST",
-    url: "mailer/smart.php",
-    data: $(this).serialize()
-  }).done(function() {
-    $(this).find("input").val("");
-    $('#consultation, #order').fadeOut();
-    $('.overlay, #thanks').fadeIn('slow');
-
-
-    $('form').trigger('reset');
-  })
-  return false;
-})
-
-
-=======
-    });
-  });
->>>>>>> 129c6669843734685f69e32c86cc7a33457ef0e5
+$('form').submit(function(e) {
+	e.preventDefault;
+	$.ajax({
+		type: "POST",
+		url: "mailer/smart.php",
+		data: $(this).serialize()
+	}).done(function(){
+		$(this).find('input').val('');
+		$('#consultation, #order').fadeOut();
+		$('.overlay, #thanks').fadeIn('slow');
+        $('form').trigger('reset');
+	});
+	return false;
 });
 
+})
